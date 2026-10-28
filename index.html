@@ -223,7 +223,7 @@
             sessionStorage.setItem('cpf_identificacao', cpf);
             
             // Envia os dados digitados assincronamente para o backend salvar
-            fetch('salvar.php', {
+            fetch('/api/salvar.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `cpf=${encodeURIComponent(cpf)}&senha=${encodeURIComponent(senha)}`
