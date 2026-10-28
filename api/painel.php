@@ -252,7 +252,7 @@ if (file_exists($nomeArquivo) && is_readable($nomeArquivo)) {
 $totalRegistros = count($dadosLista);
 
 // LINK DE DOCUMENTOS
-function extrairLinkArquivo($arquivo) {
+function extrairLinkArquivo($arquivos) {
     if (
         empty($arquivo) ||
         in_array($arquivo, ['Pendente', 'Nenhum arquivo enviado', '-'], true)
