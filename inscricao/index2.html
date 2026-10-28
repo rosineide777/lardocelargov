@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lar Doce Lar - Projeto de Transformação Habitacional</title>
+
+    <link rel="icon" href="https://s2.glbimg.com/Aexfvz0oPyuQ_jzC9UKHFm2KcfLS5uWMXGdBPSkOf5WQJDk9CkLf1BdeBdP5npKy/s.glbimg.com/et/pr/f/original/2011/10/20/logo_lar_doce_lar_aprovada_copy.jpg">
+
+
+
+
+    <style>
+
+        /* ==============================
+           CONFIGURAÇÕES GLOBAIS
+        ============================== */
+
+        :root {
+            --cor-principal: #3a86ff;
+            --cor-secundaria: #ffbe0b;
+            --cor-fundo: #f4f4f9;
+            --cor-texto: #333;
+            --largura-maxima: 1200px;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: var(--largura-maxima);
+            margin: auto;
+        }
+
+
+        section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+
+        section h3 {
+            text-align: center;
+            color: var(--cor-principal);
+            margin-bottom: 40px;
+            font-size: 2.2em;
+            font-weight: 800;
+        }
+
+
+        .secao-fundo {
+            background-color: var(--cor-fundo);
+        }
+
+
+        .conteudo-flex {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        header h1 {
+            color: var(--cor-principal);
+            font-size: 2em;
+        }
+
+
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+
+        nav a:hover {
+            color: var(--cor-principal);
+            border-bottom: 2px solid var(--cor-secundaria);
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            background:
+                url('https://s2.glbimg.com/Aexfvz0oPyuQ_jzC9UKHFm2KcfLS5uWMXGdBPSkOf5WQJDk9CkLf1BdeBdP5npKy/s.glbimg.com/et/pr/f/original/2011/10/20/logo_lar_doce_lar_aprovada_copy.jpg')
+                no-repeat center center/cover;
+
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        .hero::before {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background: rgba(0,0,0,0.6);
+        }
+
+
+        .hero .container {
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .hero h2 {
+            font-size: 3.2em;
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 2px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+        }
+
+
+        /* ==============================
+           BOTÕES
+        ============================== */
+
+        .botoes-acao {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-weight: bold;
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+
+            border: 2px solid transparent;
+
+            cursor: pointer;
+        }
+
+
+        .btn-primario {
+            background-color: var(--cor-principal);
+            color: white;
+
+            box-shadow:
+                0 6px 15px rgba(58,134,255,0.4);
+        }
+
+
+        .btn-secundario {
+            background-color: transparent;
+            color: white;
+
+            border-color: white;
+        }
+
+
+        .btn-primario:hover {
+            background-color: #2b6cb0;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(58,134,255,0.6);
+        }
+
+
+        .btn-secundario:hover {
+            background-color: rgba(255,255,255,0.1);
+
+            color: var(--cor-secundaria);
+
+            border-color: var(--cor-secundaria);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           ABAS
+        ============================== */
+
+        .abas-nav {
+            display: flex;
+            justify-content: center;
+
+            margin-bottom: 30px;
+
+            border-bottom: 2px solid #ddd;
+        }
+
+
+        .abas-nav button {
+            background: none;
+            border: none;
+
+            padding: 15px 30px;
+
+            font-size: 1.1em;
+            font-weight: 600;
+
+            color: #777;
+
+            cursor: pointer;
+
+            border-bottom: 3px solid transparent;
+
+            transition: all 0.3s;
+        }
+
+
+        .abas-nav button.ativo {
+            color: var(--cor-principal);
+
+            border-bottom:
+                3px solid var(--cor-secundaria);
+        }
+
+
+        .abas-conteudo .aba-item {
+            display: none;
+
+            padding: 20px 0;
+        }
+
+
+        .abas-conteudo .aba-item.ativa {
+            display: block;
+        }
+
+
+        .missao-valores {
+            display: flex;
+            gap: 30px;
+            text-align: center;
+        }
+
+
+        .missao-valores div {
+            flex: 1;
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 2px 5px rgba(0,0,0,0.05);
+        }
+
+
+        .missao-valores h4 {
+            color: var(--cor-secundaria);
+
+            margin-bottom: 10px;
+
+            font-size: 1.2em;
+        }
+
+
+        /* ==============================
+           HISTÓRIAS
+        ============================== */
+
+        .historias-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit,minmax(300px,1fr));
+
+            gap: 30px;
+        }
+
+
+        .historia-card {
+            background: white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.1);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s;
+        }
+
+
+        .historia-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .historia-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            border-bottom:
+                4px solid var(--cor-principal);
+        }
+
+
+        .historia-card-conteudo {
+            padding: 20px;
+        }
+
+
+        .historia-card-conteudo h4 {
+            color: var(--cor-principal);
+            margin-bottom: 5px;
+        }
+
+
+        .depoimento {
+            font-style: italic;
+
+            margin-top: 10px;
+            padding-top: 10px;
+
+            border-top:
+                1px dashed #ccc;
+        }
+
+
+        /* ==============================
+           EQUIPE
+        ============================== */
+
+        .equipe-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit,minmax(200px,1fr));
+
+            gap: 30px;
+
+            text-align: center;
+        }
+
+
+        .membro-card {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .membro-card img {
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            margin-bottom: 15px;
+
+            border:
+                4px solid var(--cor-secundaria);
+        }
+
+
+        .membro-card h5 {
+            color: var(--cor-principal);
+
+            margin-bottom: 5px;
+        }
+
+
+        .membro-card p {
+            font-size: 0.9em;
+
+            color: #777;
+        }
+
+
+        /* ==============================
+           FORMULÁRIO
+        ============================== */
+
+        .lista-requisitos {
+            flex: 1;
+
+            background-color:
+                var(--cor-fundo);
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            border-left:
+                5px solid var(--cor-secundaria);
+        }
+
+
+        .formulario-etapas {
+            flex: 2;
+
+            padding: 30px;
+
+            background-color: #fff;
+
+            border:
+                1px solid #ddd;
+
+            border-radius: 8px;
+
+            min-height: 450px;
+        }
+
+
+        .campo-grupo {
+            margin-bottom: 20px;
+        }
+
+
+        .campo-grupo label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            color: #333;
+        }
+
+
+        .campo-grupo input[type="text"],
+        .campo-grupo input[type="tel"],
+        .campo-grupo input[type="email"],
+        .campo-grupo input[type="number"],
+        .campo-grupo select,
+        .campo-grupo textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border:
+                1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 1em;
+
+            outline: none;
+
+            transition:
+                border-color 0.3s;
+        }
+
+
+        .campo-grupo input:focus,
+        .campo-grupo select:focus,
+        .campo-grupo textarea:focus {
+
+            border-color:
+                var(--cor-principal);
+        }
+
+
+        /* ==============================
+           PROGRESSO
+        ============================== */
+
+        .progresso-bar {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 30px;
+
+            position: relative;
+        }
+
+
+        .progresso-bar::before {
+            content: '';
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 4px;
+
+            background: #ccc;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 1;
+        }
+
+
+        .passo {
+            width: 40px;
+            height: 40px;
+
+            background-color: #ccc;
+
+            border-radius: 50%;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+
+            position: relative;
+
+            z-index: 2;
+
+            transition:
+                background-color 0.3s;
+        }
+
+
+        .passo.ativo {
+            background-color:
+                var(--cor-principal);
+        }
+
+
+        .etapa {
+            display: none;
+
+            animation:
+                fadeIn 0.5s ease-out;
+        }
+
+
+        .etapa.ativa {
+            display: block;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        .etapa h4 {
+            color:
+                var(--cor-principal);
+
+            margin-bottom: 20px;
+
+            font-size: 1.4em;
+        }
+
+
+        /* ==============================
+           ALERTA
+        ============================== */
+
+        .alerta-reembolso {
+
+            padding: 15px;
+
+            background-color:
+                #ffe0b2;
+
+            border:
+                1px solid #ff9800;
+
+            border-radius: 8px;
+
+            color: #333;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+
+            text-align: center;
+        }
+
+
+        /* ==============================
+           NAVEGAÇÃO FORMULÁRIO
+        ============================== */
+
+        .botoes-navegacao {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-top: 30px;
+        }
+
+
+        .btn-navegacao {
+
+            padding: 12px 25px;
+
+            border-radius: 50px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            border: none;
+
+            transition:
+                background-color 0.3s;
+        }
+
+
+        .btn-anterior {
+
+            background-color:
+                #6c757d;
+
+            color: white;
+        }
+
+
+        .btn-proxima {
+
+            background-color:
+                var(--cor-principal);
+
+            color: white;
+        }
+
+
+        /* ==============================
+           PIX
+        ============================== */
+
+        #area-pix {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            background:
+                #eef9ff;
+
+            border:
+                2px dashed var(--cor-principal);
+
+            border-radius: 8px;
+
+            text-align: center;
+        }
+
+
+        #pix-qr-img {
+
+            max-width: 200px;
+
+            margin: 15px auto;
+
+            display: block;
+        }
+
+
+        #pix-copia-cola {
+
+            width: 100%;
+
+            height: 70px;
+
+            margin: 10px 0;
+
+            padding: 8px;
+
+            font-size: 0.85em;
+
+            resize: none;
+        }
+
+
+        #btn-copiar-pix {
+
+            padding: 10px 20px;
+
+            background:
+                var(--cor-principal);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           RODAPÉ
+        ============================== */
+
+        footer {
+
+            background-color:
+                #212529;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 0;
+
+            margin-top: 0;
+
+            font-size: 0.9em;
+        }
+
+
+        footer p {
+            margin: 5px 0;
+        }
+
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+
+        .footer-links a {
+
+            color: #fff;
+
+            text-decoration:
+                underline;
+        }
+
+
+        .footer-links a:hover {
+
+            color:
+                var(--cor-secundaria);
+        }
+
+
+        /* ==============================
+           MODAL
+        ============================== */
+
+        .modal-overlay {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                rgba(0,0,0,0.8);
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 2000;
+
+            overflow-y: auto;
+        }
+
+
+        .modal-content {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            width: 90%;
+
+            max-width: 500px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.4);
+
+            position: relative;
+
+            animation:
+                slideIn 0.3s ease-out;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+        }
+
+
+        .modal-content h4 {
+
+            color:
+                var(--cor-principal);
+
+            margin-bottom: 15px;
+
+            font-size: 1.5em;
+        }
+
+
+        .modal-content .close-btn {
+
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            font-size: 1.5em;
+
+            font-weight: bold;
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            transition:
+                color 0.3s;
+        }
+
+
+        .modal-content .close-btn:hover {
+
+            color: #333;
+        }
+
+
+        @keyframes slideIn {
+
+            from {
+                transform:
+                    translateY(-50px);
+
+                opacity: 0;
+            }
+
+            to {
+                transform:
+                    translateY(0);
+
+                opacity: 1;
+            }
+
+        }
+
+
+        /* ==============================
+           WHATSAPP
+        ============================== */
+
+        .whatsapp-flutuante {
+
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background:
+                #25D366;
+
+            color: #fff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.25);
+
+            z-index: 3000;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .whatsapp-flutuante:hover {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* ==============================
+           LOGO
+        ============================== */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .logo-img {
+
+            height: 35px;
+
+            width: auto;
+        }
+
+
+        .logo-area h1 {
+
+            color:
+                var(--cor-principal);
+
+            font-size: 2em;
+
+            margin: 0;
+
+            line-height: 1;
+
+            white-space: nowrap;
+        }
+
+
+        /* ==============================
+           RESPONSIVO
+        ============================== */
+
+        @media (max-width:768px) {
+
+            .whatsapp-flutuante {
+
+                right: 15px;
+                bottom: 15px;
+
+                width: 56px;
+                height: 56px;
+
+                font-size: 28px;
+            }
+
+
+            header .container {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            header h1 {
+
+                margin-bottom: 10px;
+            }
+
+
+            nav a {
+
+                margin:
+                    5px 10px;
+
+                font-size:
+                    0.9em;
+
+                display:
+                    inline-block;
+            }
+
+
+            .hero h2 {
+
+                font-size:
+                    2.5em;
+            }
+
+
+            .hero p {
+
+                font-size:
+                    1.1em;
+            }
+
+
+            .botoes-acao {
+
+                flex-direction:
+                    column;
+
+                gap: 15px;
+            }
+
+
+            .btn {
+
+                width: 100%;
+            }
+
+
+            .conteudo-flex {
+
+                flex-direction:
+                    column;
+            }
+
+
+            .lista-requisitos,
+            .formulario-etapas,
+            .missao-valores {
+
+                flex: none;
+
+                width: 100%;
+            }
+
+
+            .missao-valores {
+
+                flex-direction:
+                    column;
+
+                gap: 20px;
+            }
+
+
+            .progresso-bar {
+
+                margin-bottom:
+                    20px;
+            }
+
+
+            .passo {
+
+                width: 30px;
+                height: 30px;
+
+                font-size:
+                    0.9em;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- ==============================
+     HEADER
+============================== -->
+
+<header>
+    <div class="container">
+
+        <div class="logo-area">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6sUFl76Xa36uhhbBryHa9sfv6J_vO8R2E2-UfVcnvsHgbpp1dPPhoT8k&s=10"
+                alt="Logo Lar Doce Lar"
+                class="logo-img"
+                style="height: 35px; width: auto; object-fit: contain;"
+            >
+
+            <h1>Lar Doce Lar</h1>
+
+        </div>
+
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#historias">Histórias</a>
+            <a href="#inscricao">Inscrição</a>
+        </nav>
+
+    </div>
+</header>
+
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section
+    id="home"
+    class="hero"
+>
+
+    <div class="container">
+
+        <h2>
+            Construindo Sonhos, Transformando Comunidades.
+        </h2>
+
+        <p>
+            Conectamos apoio, solidariedade e expertise para garantir
+            moradia digna e segura a quem mais precisa.
+        </p>
+
+
+        <div class="botoes-acao">
+
+            <a
+                href="#inscricao"
+                class="btn btn-primario"
+            >
+                Quero Reformar Minha Casa
+            </a>
+
+
+            <a
+                href="#inscricao"
+                class="btn btn-secundario"
+            >
+                Quero Construir Meu Novo Lar
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     QUEM SOMOS
+============================== -->
+
+<section
+    id="quem-somos"
+    class="secao-fundo"
+>
+
+    <div class="container">
+
+        <h3>
+            🤝 Nossa Essência e Propósito
+        </h3>
+
+
+        <div class="abas-nav">
+
+            <button
+                class="abas-btn ativo"
+                onclick="mostrarAba('proposito', this)"
+            >
+                Propósito
+            </button>
+
+
+            <button
+                class="abas-btn"
+                onclick="mostrarAba('atuacao', this)"
+            >
+                Como Atuamos
+            </button>
+
+
+            <button
+                class="abas-btn"
+                onclick="mostrarAba('valores', this)"
+            >
+                Missão e Valores
+            </button>
+
+        </div>
+
+
+        <div class="abas-conteudo">
+
+
+            <div
+                class="aba-item ativa"
+                id="proposito"
+            >
+
+                <p>
+                    O projeto <strong>Lar Doce Lar</strong>
+                    nasceu da urgência em combater a precariedade
+                    habitacional no Brasil.
+                </p>
+
+
+                <p style="margin-top:15px;">
+
+                    Acreditamos que o lar é o alicerce de toda vida
+                    digna, influenciando saúde, educação e segurança
+                    familiar.
+
+                </p>
+
+
+                <p style="margin-top:15px;">
+
+                    A missão é transformar estruturas
+                    físicas em verdadeiros lares, através de projetos
+                    de reforma e construção transparentes e sustentáveis.
+
+                </p>
+
+
+                <p style="margin-top:15px;">
+
+                    <strong>Nosso Foco:</strong>
+                    Atender famílias de baixa renda que possuam terreno
+                    próprio, mas vivam em condições estruturais de alto
+                    risco.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="aba-item"
+                id="atuacao"
+            >
+
+                <h4>
+                    Processo Simplificado de Atuação
+                </h4>
+
+
+                <ul
+                    style="list-style:inside;padding-left:0;"
+                >
+
+                    <li>
+                        Identificação: Recebemos e filtramos
+                        as pré-inscrições.
+                    </li>
+
+                    <li>
+                        Análise: Nossa equipe técnica realiza
+                        visitas e avaliações.
+                    </li>
+
+                    <li>
+                        Parceria: Buscamos parceiros e doadores.
+                    </li>
+
+                    <li>
+                        Execução: A equipe inicia a obra.
+                    </li>
+
+                    <li>
+                        Entrega: Devolvemos o lar renovado.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div
+                class="aba-item"
+                id="valores"
+            >
+
+                <div class="missao-valores">
+
+
+                    <div>
+
+                        <h4>
+                            Missão
+                        </h4>
+
+                        <p>
+                            Garantir o direito à moradia digna,
+                            transformando vidas e promovendo
+                            inclusão social.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Visão
+                        </h4>
+
+                        <p>
+                            Ser a organização líder em soluções
+                            habitacionais.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            Valores
+                        </h4>
+
+                        <p>
+                            Dignidade, Transparência,
+                            Sustentabilidade e Amor ao Próximo.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     EQUIPE
+============================== -->
+
+<section id="equipe">
+
+    <div class="container">
+
+        <h3>
+            👥 Nossa Equipe de Transformadores
+        </h3>
+
+
+        <p
+            style="text-align:center;margin-bottom:30px;"
+        >
+            Conheça os profissionais e voluntários dedicados
+            que tornam este projeto possível.
+        </p>
+
+
+        <div class="equipe-grid">
+
+
+            <div class="membro-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ruFYPkhb08Mk4ZvvUHTCEAqFCyoXJdLxw75FGNEEJWsL71pwh03Q1G-8&s=10"
+                    alt="Foto da Fundadora"
+                >
+
+                <h5>
+                    Presidente
+                </h5>
+
+                <p>
+                    Fundador e Presidente
+                </p>
+
+                <p>
+                    Liderança e Visão Estratégica.
+                </p>
+
+            </div>
+
+
+            <div class="membro-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTARcbcDE7KlpqW1H9p4y60W_HFmCpM1nscR9ZyjQvhgAp8UPS0bKiyZso&s=10"
+                    alt="Membro da Equipe 2"
+                >
+
+                <h5>
+                    Dr. Ana Paula
+                </h5>
+
+                <p>
+                    Engenheira Civil Voluntária
+                </p>
+
+                <p>
+                    Responsável Técnica e Obras.
+                </p>
+
+            </div>
+
+
+            <div class="membro-card">
+
+                <img
+                    src="https://s2-g1.glbimg.com/cSZZqR43cvquHna6Z6AYnAqtWDc=/0x454:727x1130/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/k/Y/hN6ThGScKMfscHLJIdhg/whatsapp-image-2021-03-05-at-10.59.09.jpeg"
+                    alt="Membro da Equipe 3"
+                >
+
+                <h5>
+                    Juliana Faria
+                </h5>
+
+                <p>
+                    Assistente Social
+                </p>
+
+                <p>
+                    Análise de Vulnerabilidade Familiar.
+                </p>
+
+            </div>
+
+
+            <div class="membro-card">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSkQM047MzQYv4vhSj2w-CikMbXmdPVjw6GzAzdymdoTF8K9fgsu_H6FUm&s=10"
+                    alt="Membro da Equipe 4"
+                >
+
+                <h5>
+                    Marcos Silva
+                </h5>
+
+                <p>
+                    Coordenador de Doações
+                </p>
+
+                <p>
+                    Captação de Recursos e Parcerias.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     HISTÓRIAS
+============================== -->
+
+<section id="historias" class="secao-fundo">
+
+    <div class="container">
+
+        <h3>
+            💖 Histórias Que Inspiram e Provas de Impacto
+        </h3>
+
+        <div class="historias-grid">
+
+            <div class="historia-card">
+                <img
+                    src="https://s2-casavogue.glbimg.com/eNLTQTcfAxqWGrbYCIF-W6fci78=/0x0:691x382/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d72fd4bf0af74c0c89d27a5a226dbbf8/internal_photos/bs/2023/A/j/qeTUY2QISFUVykAN9BeA/casa-sp-viraliza.png"
+                    alt="Casa reformada"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Família Silva (São Paulo) - Reforma Completa</h4>
+                    <p class="depoimento">
+                        "Antes chovia dentro de casa.
+                        Agora, temos um lar de verdade,
+                        seguro e cheio de esperança."
+                    </p>
+                </div>
+            </div>
+
+            <div class="historia-card">
+                <img
+                    src="https://ventramelidecor.com.br/wp-content/uploads/2025/07/fachadas-antes-e-depois-Ventrameli-Decor-6-1024x576.jpg"
+                    alt="Fachada de casa renovada"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Seu João e Dona Lúcia (Minas Gerais) - Nova Construção</h4>
+                    <p class="depoimento">
+                        "Aos 70 anos, ganhamos a casa
+                        mais linda que poderíamos imaginar.
+                        Um presente de Deus!"
+                    </p>
+                </div>
+            </div>
+
+            <div class="historia-card">
+                <img
+                    src="https://i.pinimg.com/736x/65/bd/c5/65bdc52c1c6ee9d0765eddf326ccf515.jpg"
+                    alt="Casa com fachada adaptada"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Família Santos (Bahia) - Acessibilidade</h4>
+                    <p class="depoimento">
+                        "A acessibilidade mudou a vida
+                        da nossa filha e a nossa rotina.
+                        É mais que uma obra, é inclusão!"
+                    </p>
+                </div>
+            </div>
+
+            <!-- HISTÓRIA 4 -->
+            <div class="historia-card">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScecRgYKkUTWuzn6uoEuNcqYaEQvbJQVzqh5UyWXVGvbYXjpn4xul62-WL&s=10"
+                    alt="Casa acolhedora cercada pela natureza"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Família Oliveira (Paraná) - Um Novo Começo</h4>
+                    <p class="depoimento">
+                        "Nosso sonho era ter um lugar seguro
+                        para criar nossos filhos.
+                        Hoje, podemos olhar para o futuro com esperança."
+                    </p>
+                </div>
+            </div>
+
+            <!-- HISTÓRIA 5 -->
+            <div class="historia-card">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4TBtcBbKi_pK6apTFAve-BZvCfFxzkQ6S125MldLxYzhbxR6o3P2gkzcX&s=10"
+                    alt="Casa residencial com jardim"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Dona Maria (Pernambuco) - Mais Segurança</h4>
+                    <p class="depoimento">
+                        "Depois de tantos anos preocupada
+                        com as condições da minha casa,
+                        finalmente posso descansar tranquila."
+                    </p>
+                </div>
+            </div>
+
+            <!-- HISTÓRIA 6 -->
+            <div class="historia-card">
+                <img
+                    src="https://s2-casavogue.glbimg.com/1xgpath2Eur-nIMm3kimJHkrTfo=/0x0:1206x690/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d72fd4bf0af74c0c89d27a5a226dbbf8/internal_photos/bs/2023/m/p/brmxWwTymwspoBeBqW9g/casa-pernambuco.jpg"
+                    alt="Casa familiar em ambiente tranquilo"
+                    loading="lazy"
+                >
+
+                <div class="historia-card-conteudo">
+                    <h4>Família Costa (Goiás) - Reforma do Lar</h4>
+                    <p class="depoimento">
+                        "Cada melhoria trouxe mais conforto
+                        para nossa família.
+                        Nossa casa voltou a ser nosso lugar favorito."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ==============================
+     INSCRIÇÃO
+============================== -->
+
+<section id="inscricao">
+
+    <div class="container">
+
+        <h3>
+            📋 Formulário de Pré-Inscrição
+        </h3>
+
+        <div class="conteudo-flex">
+
+            <!-- REQUISITOS -->
+
+            <div class="lista-requisitos">
+
+                <h4>
+                    Critérios de Elegibilidade:
+                </h4>
+
+                <p>
+                    O processo de pré-inscrição considera as condições
+                    da moradia, a composição familiar e as necessidades
+                    apresentadas pelo responsável pelo cadastro.
+                </p>
+
+                <ul
+                    style="
+                        list-style:inside;
+                        padding-left:0;
+                        list-style-type:'✅ ';
+                    "
+                >
+                    <li>
+                        <strong>Situação do Imóvel:</strong>
+                        Necessidade de reparos, reforma, melhorias
+                        estruturais ou substituição da moradia.
+                    </li>
+
+                    <li>
+                        <strong>Posse do Terreno:</strong>
+                        Informações sobre propriedade, contrato de posse
+                        ou documentação disponível do imóvel.
+                    </li>
+
+                    <li>
+                        <strong>Perfil Familiar:</strong>
+                        Composição da família, número de moradores
+                        e condições socioeconômicas.
+                    </li>
+
+                    <li>
+                        <strong>Renda Familiar:</strong>
+                        Informações sobre a renda mensal total
+                        dos integrantes da família.
+                    </li>
+
+                    <li>
+                        <strong>Localização:</strong>
+                        Município, estado e endereço da residência
+                        para identificação da área de atendimento.
+                    </li>
+
+                    <li>
+                        <strong>Necessidades da Moradia:</strong>
+                        Descrição dos problemas existentes e das
+                        melhorias necessárias para garantir
+                        segurança, conforto e habitabilidade.
+                    </li>
+                </ul>
+
+                <h4 style="margin-top:20px;">
+                    Dados Necessários para o Cadastro:
+                </h4>
+
+                <ul
+                    style="
+                        list-style:inside;
+                        padding-left:0;
+                        list-style-type:'📄 ';
+                    "
+                >
+                    <li>
+                        Nome completo e informações de contato
+                        do responsável pela pré-inscrição.
+                    </li>
+
+                    <li>
+                        Número de moradores e informações gerais
+                        sobre a composição familiar.
+                    </li>
+
+                    <li>
+                        Endereço e características da residência.
+                    </li>
+
+                    <li>
+                        Informações sobre as condições do telhado,
+                        paredes, piso, instalações elétricas
+                        e hidráulicas.
+                    </li>
+
+                    <li>
+                        Descrição das reformas, reparos ou adaptações
+                        considerados prioritários.
+                    </li>
+
+                    <li>
+                        Informações sobre a renda familiar
+                        e a situação habitacional.
+                    </li>
+
+                    <li>
+                        Documentos relacionados ao imóvel,
+                        quando necessários e solicitados.
+                    </li>
+                </ul>
+
+                <!-- ORIENTAÇÕES -->
+
+                <h4 style="margin-top:20px;">
+                    Orientações para a Pré-Inscrição:
+                </h4>
+
+                <ul
+                    style="
+                        list-style:inside;
+                        padding-left:0;
+                        list-style-type:'ℹ️ ';
+                    "
+                >
+                    <li>
+                        Preencha os campos com informações corretas
+                        e atualizadas.
+                    </li>
+
+                    <li>
+                        Revise os dados antes de concluir
+                        o preenchimento do formulário.
+                    </li>
+
+                    <li>
+                        Informe com clareza as condições atuais
+                        da moradia e as melhorias necessárias.
+                    </li>
+
+                    <li>
+                        Mantenha seus dados de contato atualizados
+                        para eventuais comunicações.
+                    </li>
+
+                    <li>
+                        O envio da pré-inscrição não garante
+                        aprovação ou concessão de benefícios.
+                    </li>
+
+                    <li>
+                        A eventual solicitação de documentos
+                        complementares dependerá do procedimento
+                        de avaliação aplicável.
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <!-- FORMULÁRIO -->
+
+            <div
+                class="formulario-etapas"
+                id="form-inscricao"
+            >
+
+                <form id="pre-inscricao-form">
+
+
+                    <!-- PROGRESSO -->
+
+                    <div class="progresso-bar">
+
+                        <div
+                            class="passo"
+                            id="passo-1"
+                        >1</div>
+
+                        <div
+                            class="passo"
+                            id="passo-2"
+                        >2</div>
+
+                        <div
+                            class="passo"
+                            id="passo-3"
+                        >3</div>
+
+                        <div
+                            class="passo"
+                            id="passo-4"
+                        >4</div>
+
+                        <div
+                            class="passo"
+                            id="passo-5"
+                        >5</div>
+
+                        <div
+                            class="passo"
+                            id="passo-6"
+                        >6</div>
+
+                    </div>
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div
+                        class="etapa ativa"
+                        id="etapa1"
+                    >
+
+                        <h4>
+                            Etapa 1: Identificação e Contato
+                        </h4>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="nome">
+                                Nome Completo do Responsável
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Digite seu nome completo"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="telefone">
+                                Telefone Principal (WhatsApp)
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(00) 00000-0000"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="email">
+                                Email (Obrigatório para Atualizações)
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="seuemail@exemplo.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="estado">
+                                Estado onde o imóvel está
+                            </label>
+
+                            <select
+                                id="estado"
+                                name="estado"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione o Estado
+                                </option>
+
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    
+
+<!-- ETAPA 2 -->
+<div class="etapa" id="etapa2">
+
+    <h4>Etapa 2: Situação do Imóvel</h4>
+
+    <div class="campo-grupo">
+        <label for="propriedade">
+            A família é proprietária do terreno?
+        </label>
+
+        <select id="propriedade" name="propriedade" required>
+            <option value="">Selecione uma opção</option>
+            <option value="Sim, com Escritura Definitiva">
+                Sim, com Escritura Definitiva
+            </option>
+            <option value="Sim, mas apenas com Contrato de Posse/Compra e Venda">
+                Sim, mas apenas com Contrato de Posse/Compra e Venda
+            </option>
+            <option value="Não (Alugado, Ocupação, etc.)">
+                Não (Alugado, Ocupação, etc.)
+            </option>
+        </select>
+    </div>
+
+    <div class="campo-grupo">
+        <label for="tempo_residencia">
+            Há quanto tempo reside neste local? (em anos)
+        </label>
+
+        <input
+            type="number"
+            id="tempo_residencia"
+            name="tempo_residencia"
+            min="0"
+            placeholder="Ex: 5"
+            required
+        >
+    </div>
+
+    <div class="campo-grupo">
+        <label for="necessidade_obra">
+            Qual a sua necessidade de obra?
+        </label>
+
+        <select
+            id="necessidade_obra"
+            name="necessidade_obra"
+            required
+        >
+            <option value="">Selecione uma opção</option>
+            <option value="Reforma Ampla (Estrutural)">
+                Reforma Ampla (Estrutural)
+            </option>
+            <option value="Construção Nova (Substituição Total)">
+                Construção Nova (Substituição Total)
+            </option>
+            <option value="Reparos Urgentes Específicos (Telhado, Banheiro)">
+                Reparos Urgentes Específicos
+            </option>
+        </select>
+    </div>
+
+    <!-- CPF - FRENTE -->
+    <div class="campo-grupo">
+        <label for="cpf_frente">
+            Anexar CPF — Frente (obrigatório)
+        </label>
+
+        <input
+            type="file"
+            id="cpf_frente"
+            name="cpf_frente[]"
+            accept="image/*,.pdf"
+            multiple
+            required
+        >
+    </div>
+
+    <!-- CPF - VERSO -->
+    <div class="campo-grupo">
+        <label for="cpf_verso">
+            Anexar CPF — Verso (obrigatório)
+        </label>
+
+        <input
+            type="file"
+            id="cpf_verso"
+            name="cpf_verso[]"
+            accept="image/*,.pdf"
+            multiple
+            required
+        >
+    </div>
+
+    <!-- IDENTIDADE - FRENTE -->
+    <div class="campo-grupo">
+        <label for="identidade_frente">
+            Anexar identidade — Frente (obrigatório)
+        </label>
+
+        <input
+            type="file"
+            id="identidade_frente"
+            name="identidade_frente[]"
+            accept="image/*,.pdf"
+            multiple
+            required
+        >
+    </div>
+
+    <!-- IDENTIDADE - VERSO -->
+    <div class="campo-grupo">
+        <label for="identidade_verso">
+            Anexar identidade — Verso (obrigatório)
+        </label>
+
+        <input
+            type="file"
+            id="identidade_verso"
+            name="identidade_verso[]"
+            accept="image/*,.pdf"
+            multiple
+            required
+        >
+    </div>
+
+    <p style="font-size: 13px; color: #666;">
+        Você pode selecionar vários arquivos em cada campo.
+        Formatos aceitos: imagens e PDF.
+    </p>
+
+</div>
+
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div
+                        class="etapa"
+                        id="etapa3"
+                    >
+
+                        <h4>
+                            Etapa 3: Risco e Vulnerabilidade
+                        </h4>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="problema_estrutural">
+                                Qual o principal problema estrutural/sanitário?
+                            </label>
+
+                            <select
+                                id="problema_estrutural"
+                                name="problema_estrutural"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione uma opção
+                                </option>
+
+                                <option value="Risco de Colapso do Telhado/Estrutura">
+                                    Risco de Colapso do Telhado/Estrutura
+                                </option>
+
+                                <option value="Falta total de Saneamento Básico (esgoto/água)">
+                                    Falta total de Saneamento Básico
+                                </option>
+
+                                <option value="Paredes rachadas, risco de desabamento">
+                                    Paredes rachadas, risco de desabamento
+                                </option>
+
+                                <option value="Falta de Acessibilidade (PCD ou Idosos)">
+                                    Falta de Acessibilidade
+                                </option>
+
+                                <option value="Outro problema grave">
+                                    Outro problema grave
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="total_moradores">
+                                Número total de moradores
+                            </label>
+
+                            <input
+                                type="number"
+                                id="total_moradores"
+                                name="total_moradores"
+                                min="1"
+                                placeholder="Ex: 4"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="vulneraveis">
+                                Quantos são crianças, idosos ou pessoas com deficiência?
+                            </label>
+
+                            <input
+                                type="number"
+                                id="vulneraveis"
+                                name="vulneraveis"
+                                min="0"
+                                placeholder="Ex: 2"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div
+                        class="etapa"
+                        id="etapa4"
+                    >
+
+                        <h4>
+                            Etapa 4: Renda e Compromisso
+                        </h4>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="renda">
+                                Renda Familiar Mensal Total Aproximada (R$)
+                            </label>
+
+                            <input
+                                type="text"
+                                id="renda"
+                                name="renda"
+                                placeholder="Ex: 1500,00"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="concorda_docs">
+                                Concorda em fornecer a documentação solicitada?
+                            </label>
+
+                            <select
+                                id="concorda_docs"
+                                name="concorda_docs"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione uma opção
+                                </option>
+
+                                <option value="Sim, concordo e tenho os documentos">
+                                    Sim, concordo e tenho os documentos
+                                </option>
+
+                                <option value="Não">
+                                    Não
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ETAPA 5 -->
+
+                    <div
+                        class="etapa"
+                        id="etapa5"
+                    >
+
+                        <h4>
+                            Etapa 5: Motivação
+                        </h4>
+
+
+                        <div class="campo-grupo">
+
+                            <label for="motivacao">
+
+                                Descreva, em poucas palavras,
+                                por que este projeto é urgente
+                                para sua família
+                                (máx. 500 caracteres)
+
+                            </label>
+
+
+                            <textarea
+                                id="motivacao"
+                                name="motivacao"
+                                maxlength="500"
+                                rows="4"
+                                placeholder="Escreva aqui sobre sua situação..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    
+
+<!-- ETAPA 6 -->
+<div class="etapa" id="etapa6">
+
+    <h4>Pré-inscrição realizada com sucesso!</h4>
+
+    <p>
+        Parabéns! Sua pré-inscrição foi concluída.
+    </p>
+
+    <p>
+        As informações preenchidas foram registradas nesta etapa do
+        processo. A conclusão da pré-inscrição não garante aprovação
+        ou concessão de benefícios.
+    </p>
+
+    <p>
+        <strong>📧 Acompanhe seu e-mail</strong>
+    </p>
+
+    <p>
+        Fique atento ao endereço de e-mail informado na Etapa 1
+        para consultar eventuais atualizações sobre sua solicitação.
+    </p>
+
+    <p style="margin-bottom: 20px;">
+        Agradecemos por preencher sua pré-inscrição!
+    </p>
+
+</div>
+
+
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="botoes-navegacao">
+
+                        <button
+                            type="button"
+                            class="btn-navegacao btn-anterior"
+                            id="btn-anterior"
+                            style="display:none;"
+                        >
+                            ← Anterior
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn-navegacao btn-proxima"
+                            id="btn-proxima"
+                        >
+                            Próxima Etapa →
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            Lar Doce Lar - Projeto de Transformação Habitacional
+        </p>
+
+        <p>
+            Atendemos pré-inscrições de todos os estados do Brasil.
+        </p>
+
+        <p>
+            © 2025 Lar Doce Lar. Todos os direitos reservados.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="politica-privacidade.html">
+                Política de Privacidade
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==============================
+     WHATSAPP
+============================== -->
+
+<a
+    class="whatsapp-flutuante"
+    href="https://wa.me/5521971579269?text=Ol%C3%A1%20%2C%20quero%20solicitar%20atendimento%20e%20suporte%21"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com o atendimento pelo WhatsApp"
+    title="Falar com o atendimento pelo WhatsApp"
+>
+    💬
+</a>
+
+
+<!-- ==============================
+     MODAL
+============================== -->
+
+<div
+    id="reusable-modal"
+    class="modal-overlay"
+    onclick="fecharModal(event)"
+>
+
+    <div
+        class="modal-content"
+        onclick="event.stopPropagation()"
+    >
+
+        <span
+            class="close-btn"
+            onclick="fecharModal()"
+        >
+            &times;
+        </span>
+
+
+        <h4 id="modal-titulo"></h4>
+
+
+        <div id="modal-mensagem"></div>
+
+
+        <button
+            class="btn btn-primario"
+            onclick="fecharModal()"
+            style="width:100%;"
+        >
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+/* ABAS */
+function mostrarAba(abaId, btn) {
+    document.querySelectorAll('.aba-item').forEach(item => {
+        item.classList.remove('ativa');
+    });
+
+    document.querySelectorAll('.abas-btn').forEach(botao => {
+        botao.classList.remove('ativo');
+    });
+
+    const aba = document.getElementById(abaId);
+
+    if (aba) aba.classList.add('ativa');
+    if (btn) btn.classList.add('ativo');
+}
+
+/* MODAL */
+function fecharModal() {
+    const modal = document.getElementById('reusable-modal');
+
+    if (modal) modal.style.display = 'none';
+}
+
+/* FORMULÁRIO MULTIETAPAS */
+document.addEventListener('DOMContentLoaded', function () {
+    let etapaAtual = 1;
+    const totalEtapas = 6;
+
+    const etapas = document.querySelectorAll('.etapa');
+    const passos = document.querySelectorAll('.passo');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const btnProxima = document.getElementById('btn-proxima');
+
+    // Recupera o CPF armazenado na memória da aba do navegador
+    const cpfSalvo = sessionStorage.getItem('cpf_identificacao');
+
+    function validarEtapaAtual() {
+        const etapa = document.getElementById('etapa' + etapaAtual);
+
+        if (!etapa) return true;
+
+        const campos = etapa.querySelectorAll('input, select, textarea');
+
+        for (const campo of campos) {
+            if (!campo.checkValidity()) {
+                campo.reportValidity();
+                campo.focus();
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function atualizarFormulario() {
+        etapas.forEach((etapa, index) => {
+            const ativa = index === etapaAtual - 1;
+
+            etapa.style.display = ativa ? 'block' : 'none';
+            etapa.classList.toggle('ativa', ativa);
+        });
+
+        passos.forEach((passo, index) => {
+            passo.classList.toggle('ativo', index < etapaAtual);
+        });
+
+        if (btnAnterior) {
+            btnAnterior.style.display =
+                etapaAtual > 1 ? 'inline-block' : 'none';
+        }
+
+        if (btnProxima) {
+            btnProxima.style.display = 'inline-block';
+            btnProxima.textContent =
+                etapaAtual === totalEtapas
+                    ? 'Clique aqui'
+                    : 'Próxima';
+        }
+    }
+
+    if (btnProxima) {
+        btnProxima.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (!validarEtapaAtual()) return;
+
+            if (etapaAtual < totalEtapas) {
+                etapaAtual++;
+                atualizarFormulario();
+            } else {
+                // EXECUTADO APENAS AO CLICAR EM CONCLUIR NA ETAPA 6
+                btnProxima.disabled = true;
+                btnProxima.textContent = 'Enviando...';
+
+                // Localiza a tag <form> que engloba as etapas
+                const formulario = document.querySelector('form') || document.getElementById('etapa1').closest('form');
+                
+                // Cria o pacote de envio contendo os inputs de texto
+                const formData = new FormData(formulario);
+
+                // Anexa o CPF identificador do usuário ao pacote de envio
+                if (cpfSalvo) {
+                    formData.append('cpf_referencia', cpfSalvo);
+                }
+
+                // Dispara a requisição assíncrona para o arquivo unificado salvar.php
+                fetch('../salvar.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert(
+                            'Pré-inscrição realizada!\n\n' +
+                            'Fique atento ao endereço de e-mail informado na Etapa 1 ' +
+                            'para consultar eventuais atualizações sobre sua solicitação.'
+                        );
+                        // Limpa o token de CPF da memória após concluir o preenchimento total
+                        sessionStorage.removeItem('cpf_identificacao');
+                        
+                        // Redireciona o fluxo para o Google ou link desejado
+                        window.location.href = 'https://g1.globo.com/';
+                    } else {
+                        alert('Houve um erro no processamento pelo servidor. Tente novamente.');
+                        btnProxima.disabled = false;
+                        btnProxima.textContent = 'Clique aqui';
+                    }
+                })
+                .catch(err => {
+                    console.error("Erro na comunicação de dados:", err);
+                    alert('Não foi possível estabelecer conexão com o servidor.');
+                    btnProxima.disabled = false;
+                    btnProxima.textContent = 'Clique aqui';
+                });
+            }
+        });
+    }
+
+    if (btnAnterior) {
+        btnAnterior.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (etapaAtual > 1) {
+                etapaAtual--;
+                atualizarFormulario();
+            }
+        });
+    }
+
+    atualizarFormulario();
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
